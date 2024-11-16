@@ -1,0 +1,27 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetchRegistry: true  # Enable fetching of registry
+    registerWithEureka: true  # Enable registration with Eureka
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+  cloud:
+    config:
+      override-system-properties: false
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
+  endpoint:
+    health:
+      show-details: always
